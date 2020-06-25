@@ -1,11 +1,11 @@
 class Graph:
     def __init__(self, vertices, nodes):
         self.vertices = vertices # Number of nodes in the graph
-        self.adjacent = {}
+        self.adjacent = {} # Adjacency list for each vertex
         # self.adjacent = {vertex:[] for vertex in range(1, self.vertices + 1)}
 
-        for node in nodes:
-            self.adjacent[node] = []
+        for vertex in nodes:
+            self.adjacent[vertex] = []
 
     def add_edge(self, u, v):
         # An undirected graph, so add vertices to each of their lists
@@ -16,6 +16,6 @@ class Graph:
 
     def print_graph(self):
         # print self.adjacent
-        for key in self.adjacent:
-           print str(key) + ' => ', 
-           print self.adjacent[key]
+        for vertex in self.adjacent:
+           print str(vertex) + ' => ', 
+           print self.adjacent[vertex]
