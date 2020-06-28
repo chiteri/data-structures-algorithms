@@ -1,7 +1,8 @@
 from ..list.list import List
 
-# This is an improvement of the StrawmanStack with the following properties 
-# 1) All operations are constant time
+# This is an improvement of the StrawmanStack implementation with 
+# the following perfomance specification 
+# 1) All operations take constant time
 # 2) Memory use is linear in the size of the collection, when it is non-empty
 # 3) No limits within the code on the collection size 
 class Stack:
