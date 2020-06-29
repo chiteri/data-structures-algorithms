@@ -1,3 +1,5 @@
+# This is essentially a bubble sort algorithm 
+# Which does not scale so well with larger problem sets
 class InsertionSort:
     def __init__(self, haystack):
         self.haystack = haystack 
@@ -10,7 +12,7 @@ class InsertionSort:
                 else:
                     break
 
-        return self.haystack
+        # return self.haystack
 
     # Swap two elements in a list or an array 
     def swap(self, haystack, i, j):

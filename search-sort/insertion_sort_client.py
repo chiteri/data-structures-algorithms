@@ -8,7 +8,7 @@ if __name__ == '__main__':
     print search_tokens
 
     sorter = InsertionSort(search_tokens)
-    sorted = sorter.sort()
+    sorter.sort()
 
     print "SORTED:", 
-    print sorted 
+    print search_tokens 
