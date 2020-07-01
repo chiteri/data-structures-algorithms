@@ -8,10 +8,6 @@ if __name__ == '__main__':
     print "ORIGINAL:", 
     print search_tokens
 
-    low = 0
-    high = len(search_tokens)
-    middle = low + (high - low) / 2
-
     sorter = MergeSort()
     sorter.sort_helper(search_tokens)
 
