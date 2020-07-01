@@ -4,7 +4,7 @@ if __name__ == '__main__':
     # search_tokens = [1, 3, -4, -8, 10]
     search_tokens = ['john', 'anna', 'mark', 'angela', 'james']
 
-    print "UNSORTED:", 
+    print "ORIGINAL:", 
     print search_tokens
 
     sorter = InsertionSort(search_tokens)
