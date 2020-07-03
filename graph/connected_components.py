@@ -22,7 +22,8 @@ class ConnectedComponents:
 
     # Find if two vertices, v and w are connected
     def connected(self, v, w):
-        pass
+        # Whether the two vertices are in the same connected component
+        return self.component[v] == self.component[w]
 
     # Number of connected components
     def count(self):
@@ -30,7 +31,7 @@ class ConnectedComponents:
 
     # Component identifier for v
     def id(v):
-        pass
+        return self.component[v]
 
     def dfs(self, g, v):
         self.marked[v] = True
