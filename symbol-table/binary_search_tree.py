@@ -18,6 +18,9 @@ class BinarySearchTree:
     def contains(self, key):
         return self.get(key) is not None
 
+    def delete(self, key):
+        self.put(key, None)
+
     def isEmpty(self):
         return self.root is None
 

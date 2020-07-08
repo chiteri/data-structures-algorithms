@@ -15,3 +15,9 @@ if __name__ == "__main__":
     for index in symbol_table.keys():
         print str(index), # Print key
         print str(symbol_table.get(index)) # Print value
+
+    symbol_table.delete("the")
+
+    for index in symbol_table.keys():
+        print str(index), # Print key
+        print str(symbol_table.get(index)) # Print value
