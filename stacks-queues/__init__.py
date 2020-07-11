@@ -1,1 +1,1 @@
-__all__ = ["queue", "stack", "strawman_stack"]
+__all__ = ["node", "queue", "stack", "binary_heap", "strawman_stack", "max_priority_queue", "unordered_max_priorityQ"]
