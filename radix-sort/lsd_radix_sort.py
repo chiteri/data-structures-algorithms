@@ -1,11 +1,11 @@
-# The Least Significant String Radix Sort
+# The Least-significant-digit-first Radix Sort
 class LSDRadixSort:
     def __init__(self):
         pass
 
     # String a[] with fixed strings of length W
     def sort(self, a, W):
-        R = 256 
+        R = 256 # All potential characters in the ASCII character set
         N = len(a)
         aux = [0] * N
 
@@ -31,5 +31,3 @@ class LSDRadixSort:
             # Copy the ordered string back to the original 
             for i in range(0, N):
                 a[i] = aux[i]
-
-        return a

@@ -6,4 +6,5 @@ if __name__ == "__main__":
     print letters
     indexer = LSDRadixSort()
     print "  SORTED: ",
-    print indexer.sort(letters, 3)
+    indexer.sort(letters, 3)
+    print letters
