@@ -21,6 +21,11 @@ class Stack:
         self.capacity -= 1 
         return self.items.pop()
 
+    # Find and return item added most recently without removal
+    def peek(self):
+        if self.items.head is not None:
+            return self.items.head.data
+
     # Is the stack empty?
     def isEmpty(self):
         return self.items.head is None
