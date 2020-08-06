@@ -23,7 +23,7 @@ class Stack:
 
     # Is the stack empty?
     def isEmpty(self):
-        return self.first is None
+        return self.items.head is None
 
     # Number of items in the stack
     def size(self):
