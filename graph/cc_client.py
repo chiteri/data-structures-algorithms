@@ -1,7 +1,7 @@
 from graph import Graph
 from connected_components import ConnectedComponents
 
-def criticalNode(g1, g2):
+def essentialNode(g1, g2):
     cc_before = ConnectedComponents(g1)
 
     cc_after = ConnectedComponents(g2)
@@ -12,38 +12,36 @@ def criticalNode(g1, g2):
         len( set( cc_after.component.values() ) ) >= 2
 
 if __name__ == '__main__':
-    # links = [[1, 2], [2, 3], [3, 4], [4, 5], [6, 3]] # [2, 3, 4]
-    links = [[1, 2], [1, 3], [2, 4], [3, 4], [3, 6], [6, 7], [4, 5]] # [3, 4, 6]
-    numRouters = 7 # 6 # 10
-    numLinks =  7 # 5 # 13
+    # edges = [['A', 'B'], ['B', 'C], ['C', 'D'], ['D', 'E'], ['F', 'C']] # ['B', 'C', 'D']
+    edges = [['A', 'B'], ['A', 'C'], ['B', 'D'], ['C', 'D'], ['C', 'F'], ['F', 'G'], ['D', 'E']] # ['C', 'D', 'F']
+    numNodes = 7 # 6 # 10
+    numConnections =  7 # 5 # 13
 
-    nodes = [x for x in range(1, numRouters +1)]
+    nodes = set([y for x in edges for y in x])
 
-    network = Graph(numRouters, nodes)
+    network = Graph(numNodes, nodes)
 
-    for link in links:
-        network.add_edge(link[0], link[1])
+    for edge in edges:
+        network.add_edge(edge[0], edge[1])
         
     network.print_graph()
     
-    critical_nodes = []
+    essential_nodes = []
     
-    for router in range(1, network.vertices +1):
+    for node in set([y for x in edges for y in x]):
         # Exclude a vertice from the graph 
-        less_nodes = [x for x in range(1, numRouters +1)] 
-        less_nodes.remove(router)
+        less_nodes = set([y for x in edges for y in x])
+        less_nodes.remove(node)
         
         # Build another network with fewer nodes 
-        smaller_network = Graph(numRouters - 1, less_nodes)
+        smaller_network = Graph(numNodes - 1, less_nodes)
 
         # Add the edges but skip those with excluded node
-        for link in links:
-            if link[0] is not router and link[1] is not router:
-                smaller_network.add_edge(link[0], link[1])
+        for edge in edges:
+            if edge[0] is not node and edge[1] is not node:
+                smaller_network.add_edge(edge[0], edge[1])
 
-        # smaller_network.print_graph()
+        if essentialNode(network, smaller_network):
+            essential_nodes.append(node)      
 
-        if criticalNode(network, smaller_network):
-            critical_nodes.append(router)      
-
-    print critical_nodes
+    print essential_nodes
