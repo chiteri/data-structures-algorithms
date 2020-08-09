@@ -1,1 +1,1 @@
-__all__ == ["trie"]
+__all__ == ["trie", "ternary_trie"]
