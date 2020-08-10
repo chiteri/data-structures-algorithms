@@ -11,3 +11,5 @@ if __name__ == "__main__":
     print tongue_twister.get("sea")
     print tongue_twister.contains(words[3]) # Contains shells
     print tongue_twister.contains("shElls") # Non-existent word
+
+    print tongue_twister.keys()

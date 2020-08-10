@@ -22,7 +22,7 @@ class Trie:
             return x
         
         c = key[d]
-        index = ord(c) - 97
+        index = ord(c)
         x.next[index] = self.insert(x.next[index], key, val, d+1)
 
         return x
@@ -45,10 +45,26 @@ class Trie:
         if d == len(key):
             return x
 
-        index = ord(key[d]) - 97
-        # c = key[d]
+        index = ord(key[d])
 
         return self.retrieve(x.next[index], key, d+1)
 
     def delete(self, key):
         pass
+
+    # To iterate through all keys in sorted ordered
+    def keys(self):
+        queue = [] # Empty list 
+        self.collect(self.root, "", queue)
+        return queue
+
+    # An implementation of a trie's ordered iteration
+    def collect(self, x, prefix, q):
+        if x is None:
+            return 
+
+        if x.value is not None:
+            q.append(prefix)
+
+        for c in range(0, self.R):
+            self.collect(x.next[c], prefix + chr(c), q)
