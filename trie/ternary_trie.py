@@ -16,7 +16,7 @@ class TernarySearchTrie:
         self.root = self.insert(self.root, key, val, 0)
 
     def insert(self, x, key, val, d):
-        index = ord(key[d]) - 97
+        index = ord(key[d])
 
         if x is None:
             x = Node()
@@ -48,7 +48,7 @@ class TernarySearchTrie:
         if x is None:
             return None 
 
-        index = ord(key[d]) - 97
+        index = ord(key[d])
 
         if index < x.letter:
             return self.retrieve(x.left, key, d)
