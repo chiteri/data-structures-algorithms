@@ -76,3 +76,22 @@ class Trie:
         x = self.retrieve(self.root, prefix, 0) # root of subtrie for all strings beginning with given prefix
         self.collect(x, prefix, queue)
         return queue
+
+    # Find a key in trie that is the longest prefix of given word
+    def longestPrefixOf(self, query):
+        length = self.search(self.root, query, 0, 0)
+        return query[0: length] # Get the substring 
+
+    def search(self, x, query, d, length):
+        if x is None:
+            return length 
+
+        if x.value is not None:
+            length = d 
+
+        if d == len(query):
+            return length
+
+        index = ord(query[d])
+
+        return self.search(x.next[index], query, d+1, length)
