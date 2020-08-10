@@ -13,3 +13,5 @@ if __name__ == "__main__":
     print tongue_twister.contains("shElls") # Non-existent word
 
     print tongue_twister.keys()
+
+    print tongue_twister.keyWithPrefix("sh")

@@ -68,3 +68,11 @@ class Trie:
 
         for c in range(0, self.R):
             self.collect(x.next[c], prefix + chr(c), q)
+
+    # Find all keys in a symbol table starting with a given prefix 
+    def keyWithPrefix(self, prefix):
+        queue = [] # Empty list 
+
+        x = self.retrieve(self.root, prefix, 0) # root of subtrie for all strings beginning with given prefix
+        self.collect(x, prefix, queue)
+        return queue
