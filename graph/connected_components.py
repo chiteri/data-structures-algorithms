@@ -30,7 +30,7 @@ class ConnectedComponents:
         return self.count
 
     # Component identifier for v
-    def id(v):
+    def id(self, v):
         return self.component[v]
 
     def dfs(self, g, v):
