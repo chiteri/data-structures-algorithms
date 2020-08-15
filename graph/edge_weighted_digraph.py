@@ -8,8 +8,8 @@ class EdgeWeightedDigraph:
 
     def addEdge(self, e):
         # Add edge e - v -> w only to v's adjacency list
-        v = e.from()
-        self.adjacent[v].add(e)
+        v = e.origin()
+        self.adjacent[v].append(e)
 
     def adjacent(self, v):
         return self.adjacent[v]

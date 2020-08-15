@@ -1,13 +1,12 @@
 class DirectedEdge:
     # Weighted edge v -> w
-    def __init__(self, v, w, weight):
+    def __init__(self, v, w, weigh):
         self.v = v
         self.w = w
-        self.weight = weight
-        pass
+        self.weigh = weigh
 
     # Vertex v 
-    def from(self):
+    def origin(self):
         return self.v
 
     # Vertex w
@@ -16,4 +15,4 @@ class DirectedEdge:
 
     # Weight of this edge 
     def weight(self):
-        return self.weight
+        return self.weigh
