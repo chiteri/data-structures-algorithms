@@ -2,18 +2,18 @@ class Edge:
     def __init__(self, v, w, weight):
         self.v = v
         self.w = w
-        self.weight = w 
+        self.weight = weight
 
     # Either end-point of the edge
     def either(self):
-        return v
+        return self.v
 
     # Other endpoint 
     def other(self, vertex):
-        if vertex == v:
-            return w 
+        if self.v == vertex:
+            return self.w 
         else:
-            return v
+            return self.v
 
     # Compares edges by weight
     def compareTo(self, edge):

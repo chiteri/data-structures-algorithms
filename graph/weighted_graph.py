@@ -17,5 +17,5 @@ class WeightedGraph:
         self.adjacent[w].append(e)
 
     # Edges incident to v 
-    def adjacent(self, v):
+    def adj(self, v):
         return self.adjacent[v]
