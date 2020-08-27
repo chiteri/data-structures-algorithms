@@ -2,7 +2,7 @@
 # used to perform precedence scheduling to ensure tasks take place with 
 # specific precedence constraints i.e tasks are scheduled in the correct order.
 class DepthFirstOrder:
-    def __init(self, diGraph):
+    def __init__(self, diGraph):
         self.marked = {} 
         self.reverse_post = [] # stack to store vertices in reverse postorder
 
@@ -20,7 +20,7 @@ class DepthFirstOrder:
             if not self.marked[neighbour]:
                 self.dfs(diGraph, neighbour)
 
-        self.reverse_post.append(v)
+        self.reverse_post.append(vertex)
 
     # Returns all vertices in "reverse DFS postorder"
     def reversePost(self):
